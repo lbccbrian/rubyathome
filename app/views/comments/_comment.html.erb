@@ -1,0 +1,11 @@
+<div style='border: 1px dashed gray; padding: 1eml; width: 40%;'>
+  <%= comment.body %>
+  <br>
+  <div style='text-align: right'><strong><%= comment.commenter %></strong></div>
+</div>
+
+<p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

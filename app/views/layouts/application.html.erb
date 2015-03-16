@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<html>
+<head>
+  <title>Brian's Server Blog</title>  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style='background-color: #E5D7B9'>
+<div style='background-color: #B2C1BE; margin: 2em; padding: 1.2em; box-shadow: 10px 10px 5px #194941;	border: 4px solid #75918D;
+    border-radius: 10px;'>
+<h1>Current Server News</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Back to Articles', articles_path %></li>
+        <li><%= link_to 'New Article', new_article_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<%= yield %>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

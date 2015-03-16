@@ -1,0 +1,23 @@
+<% @count = 1 %> 
+<div class="panel-group" id="accordion">
+<div class="panel panel-default">
+<% @articles.each do |article| %>
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @count %>">
+        <%= article.title %></a>
+      </h4>
+    </div>
+    <div id="collapse<%= @count %>" class="panel-collapse collapse in">
+      <div class="panel-body"><%= article.text %>
+      <table><tr><td><%= link_to 'Show', article_path(article) %>&nbsp;-&nbsp;</td>
+      <td><%= link_to 'Edit', edit_article_path(article) %>&nbsp;-&nbsp;</td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+  data: { confirm: 'Are you sure?' } %></td></tr></table>
+      </div>
+    </div>
+  <% @count += 1 %> 
+  <% end %>
+</div>
+</div>
